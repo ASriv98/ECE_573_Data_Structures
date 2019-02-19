@@ -32,26 +32,26 @@ def optimized(list, target_sum):
 	print("Total time taken: ", elapsed_time)
 
 
-def sum3_with_hash_table(a):
+def sum3_with_hash_table(list, target_sum):
 	start_time = time.time()
 	print('in n^2')
 
-	res = []
-	N = len(a)
-	d = {}
-	for i in range(N):
-		d[a[i]] = 1
-		a.sort()                          # O(N log N)
+	result = []
+	n = len(list)
+	hashmap = {}
+	for i in range(n):
+		hashmap[list[i]] = 1
+	list.sort()                          # O(N log N)
 
         # Python ranges exclude the last term, i.e., range(0,3) = [0,1,2]
-	for i in range(0, N-2):           # for i = 0 to N-3
-		for j in range(i+1, N-1):       # for j = i+1 to N-2
-			val = -(a[i] + a[j])
-			if a[i] < a[j] < val and val in d:
-				res.append( [a[i], a[j], val] )
+	for i in range(0, n-2):           # for i = 0 to N-3
+		for j in range(i+1, n-1):       # for j = i+1 to N-2
+			search_value = -(list[i] + list[j])
+			if list[i] < list[j] < search_value and search_value in hashmap:
+				result.append( [list[i], list[j], search_value] )
 
 	elapsed_time = time.time() - start_time
 	print("Total time taken: ", elapsed_time)
-	return res
+	return result
 
 	

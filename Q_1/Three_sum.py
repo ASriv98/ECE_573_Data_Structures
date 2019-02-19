@@ -46,7 +46,7 @@ class three_sum():
 		start_time = time.time()
 		n = len(list)
 		result = 0
-  		list.sort()        #python sorts in n log n time                   
+		list.sort()        #python sorts in n log n time                   
 
 		for i in range(0, len(list)): 
 			for j in range(i+1, len(list)):       

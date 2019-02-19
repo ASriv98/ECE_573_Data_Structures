@@ -28,9 +28,9 @@ for x in range(0,5):
 		input_list = list(map(int, input_list))	#converting string to an integer 
 		#print(input_list)
 
-		result.naive(input_list, 0)
-		result.Three_sum_with_bsearch(input_list, 0)
-		#result.sum3_with_hash_table(input_list)
+		#result.naive(input_list, 0)
+		#result.Three_sum_with_bsearch(input_list, 0)
+		result.sum3_with_hash_table(input_list, 0)
 
 
 
