@@ -9,9 +9,6 @@ data_dir = os.listdir('hw1-1.data')
 os.chdir('hw1-1.data')
 result = Three_sum.three_sum()
 
-#test_list = [-1,2,-3,4,5,6,7,8,9,10]
-#result.Three_sum_with_bsearch(test_list, 26)
-
 
 for x in range(0,5):
 
@@ -28,9 +25,13 @@ for x in range(0,5):
 		input_list = list(map(int, input_list))	#converting string to an integer 
 		#print(input_list)
 
-		#result.naive(input_list, 0)
-		#result.Three_sum_with_bsearch(input_list, 0)
-		result.sum3_with_hash_table(input_list, 0)
+
+		#naive is O(n^3) implementation
+		#Three_sum_with_bsearch uses binary search and is n^2log(n) implementation
+		result.naive(input_list, 0)
+		result.Three_sum_with_bsearch(input_list, 0)
+
+		#naive does not finish on large data sets of 4096 and above for about 30 minutes and above
 
 
 
