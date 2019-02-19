@@ -21,9 +21,7 @@ for x in range(0,10):
 		for x in file_by_line:
 			input_list.append(x.strip())		#adding values from text file into an array
 
-		#print(input_list)
 		input_list = list(map(float, input_list))	#converting string to an integer 
-		#print(input_list)
 
 		max_difference.max_difference(input_list)
 
