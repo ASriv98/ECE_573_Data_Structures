@@ -14,7 +14,7 @@ input_list = []
 n = 8192
 
 
-for x in range(0,1):
+for x in range(0,5):
 
 	for file in data_dir:
 		input_list = []

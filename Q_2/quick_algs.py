@@ -33,12 +33,12 @@ class QuickUnion(object):
 
 class WeightedQuickUnion(object):
 	def __init__(self, N):
-		self.lst = range(N)
+		self.list = range(N)
 		self.sizes = [1] * N
 
 	def get_root(self, index):
-		while ind != self.lst[index]:
-			index = self.lst[index]
+		while index != self.list[index]:
+			index = self.list[index]
 		return index
 
 	def find(self, a, b):
@@ -46,8 +46,8 @@ class WeightedQuickUnion(object):
 
 	def union(self, a, b):
 		if self.sizes[self.get_root(a)] < self.sizes[self.get_root(b)]:
-			self.lst[self.get_root(a)] = self.get_root(b)
+			self.list[self.get_root(a)] = self.get_root(b)
 			self.sizes[self.get_root(b)] += self.sizes[self.get_root(a)]
 		else:
-			self.lst[self.get_root(b)] = self.get_root(a)
+			self.list[self.get_root(b)] = self.get_root(a)
 			self.sizes[self.get_root(a)] += self.sizes[self.get_root(b)]
