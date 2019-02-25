@@ -15,7 +15,7 @@ for x in range(0,1):
 		input_list = []
 		print(file)		#check current file we are reading
 		
-		f = open('data1.32768', "r")
+		f = open('data1.1024', "r")
 		file_by_line = f.readlines()		
 		
 		for x in file_by_line:
@@ -24,6 +24,7 @@ for x in range(0,1):
 		input_list = list(map(int, input_list))	#converting string to an integer 
 
 
+		#kendallTau.mergeSort([3,6,1,8,34,1,5,23,64,34,2,1,5])	
 		ms.top_down(input_list)
 
 
