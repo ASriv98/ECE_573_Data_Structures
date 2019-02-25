@@ -1,13 +1,12 @@
 #read in text files and call to three sum 
 import os
 import glob
-import kendallTau
-import time
+import merge_sort
 
 current_dir = os.getcwd()
 
-data_dir = os.listdir('hw2-2.data')
-os.chdir('hw2-2.data')
+data_dir = os.listdir('hw2-4.data')
+os.chdir('hw2-4.data')
 
 for x in range(0,1):
 
@@ -15,7 +14,7 @@ for x in range(0,1):
 		input_list = []
 		print(file)		#check current file we are reading
 		
-		f = open(file, "r")
+		f = open('data1.1024', "r")
 		file_by_line = f.readlines()		
 		
 		for x in file_by_line:
@@ -23,10 +22,7 @@ for x in range(0,1):
 
 		input_list = list(map(int, input_list))	#converting string to an integer 
 
-		start_time = time.time()
-		sorted_list, inversion_count = kendallTau.mergeSortInversions(input_list)
-		print(inversion_count)
-		elapsed_time = time.time() - start_time
-		print(elapsed_time)
+		merge_sort.merge_sort_top_down(input_list, 0)
+
 
 
