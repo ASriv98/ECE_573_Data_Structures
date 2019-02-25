@@ -1,16 +1,17 @@
 #read in text files and call to three sum 
-import Three_sum
 import os
 import glob
+import shellsort
 
 current_dir = os.getcwd()
 
-data_dir = os.listdir('hw1-1.data')
-os.chdir('hw1-1.data')
-result = Three_sum.three_sum()
+data_dir = os.listdir('hw2-1.data')
+os.chdir('hw2-1.data')
+gap_list = [7,3,1]
+gap_list_insertion_sort = [1]
 
 
-for x in range(0,5):
+for x in range(0,1):
 
 	for file in data_dir:
 		input_list = []
@@ -22,18 +23,12 @@ for x in range(0,5):
 		for x in file_by_line:
 			input_list.append(x.strip())		#adding values from text file into an array
 
-		input_list = list(map(int, input_list))	#converting string to an integer 
 		#print(input_list)
+		input_list = list(map(int, input_list))	#converting string to an integer 
 
 
-		#naive is O(n^3) implementation
-		#Three_sum_with_bsearch uses binary search and is n^2log(n) implementation
-		result.naive(input_list, 0)
-		result.Three_sum_with_bsearch(input_list, 0)
-
-		#naive does not finish on large data sets of 4096 and above for about 30 minutes and above
-
-
+		shellsort.shellsort(input_list, gap_list)
+		#shellsort.shellsort(input_list, gap_list_insertion_sort)
 
 
 
