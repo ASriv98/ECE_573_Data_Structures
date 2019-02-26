@@ -14,7 +14,7 @@ for x in range(0,1):
 		input_list = []
 		print(file)		#check current file we are reading
 		
-		f = open('data1.1024', "r")
+		f = open(file, "r")
 		file_by_line = f.readlines()		
 		
 		for x in file_by_line:
@@ -22,7 +22,12 @@ for x in range(0,1):
 
 		input_list = list(map(int, input_list))	#converting string to an integer 
 
-		merge_sort.merge_sort_top_down(input_list, 0)
+		#result, c = merge_sort.MergeSort(input_list)
+		#print(result)
+		#print(c)
 
+
+		result, count = merge_sort.bottomup_mergesort(input_list)
+		print(count)
 
 
