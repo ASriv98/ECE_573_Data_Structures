@@ -1,4 +1,4 @@
-cutoff = 7
+cutoff = 15
 
 def swap(array,a,b):
 	array[a],array[b] = array[b],array[a]
@@ -23,6 +23,11 @@ def partition(array,start,end):
 	return left-1
 
 def quickSortHelper(array,start,end):
+	global cutoff
+	if (len(array) < cutoff):
+		insertionSort(array)
+		return
+
 
 	if start < end:
 		splitPoint = partition(array,start,end)
@@ -31,3 +36,15 @@ def quickSortHelper(array,start,end):
 
 def quickSort(array):
 	quickSortHelper(array,0,len(array))
+
+def insertionSort(alist):
+   for index in range(1,len(alist)):
+
+	 currentvalue = alist[index]
+	 position = index
+
+	 while position>0 and alist[position-1]>currentvalue:
+		 alist[position]=alist[position-1]
+		 position = position-1
+
+	 alist[position]=currentvalue

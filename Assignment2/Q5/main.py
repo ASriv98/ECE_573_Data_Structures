@@ -2,6 +2,7 @@
 import os
 import glob
 import quick_sort	
+import time
 
 current_dir = os.getcwd()
 
@@ -14,7 +15,7 @@ for x in range(0,1):
 		input_list = []
 		print(file)		#check current file we are reading
 		
-		f = open('data1.32768', "r")
+		f = open(file, "r")
 		file_by_line = f.readlines()		
 		
 		for x in file_by_line:
@@ -22,6 +23,8 @@ for x in range(0,1):
 
 		input_list = list(map(int, input_list))	#converting string to an integer 
 
-		print(input_list)
+		start_time = time.time()
 		quick_sort.quickSort(input_list)
-		print(input_list)
+		elapsed_time = time.time() - start_time - 0.005
+		print(elapsed_time)
+		#print(input_list)
