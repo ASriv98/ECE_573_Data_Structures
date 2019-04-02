@@ -6,7 +6,7 @@ from __future__ import absolute_import
 import pytest
 import math
 import random
-
+import numpy as np
 from leftrb.llrb import LeftRB, is_red, is_black
 
 from leftrb.bst import BinarySearchTree
@@ -101,22 +101,55 @@ def getNumberRedNodes(root):
 	return count
 
 llrb_tree = LeftRB()
+llrb_tree2= LeftRB()
+llrb_tree3= LeftRB()
+
+final1 = []
+final2 = []
+final3 = []
 
 
+#change the trial size values
+for i in range(0,1):
+
+	for i in range(0,10000):
+		randomNumber = random.randint(0,10000)
+		llrb_tree.insert(randomNumber)
+
+	print(llrb_tree.root)
+	print(llrb_tree.root.key)
 
 
-for i in range(0,10000):
-	randomNumber = random.randint(0,10000)
-	llrb_tree.insert(randomNumber)
+	for i in range(0,100000):
+		randomNumber = random.randint(0,100000)
+		llrb_tree.insert(randomNumber)
 
-count = 0
+	for i in range(0,1000000):
+		randomNumber = random.randint(0,1000000)
+		llrb_tree.insert(randomNumber)
 
 
-numberRedNodes = getNumberRedNodes(llrb_tree.root)
-numberNodes = getNumberNodes(llrb_tree.root)
+	numberRedNodes = getNumberRedNodes(llrb_tree.root)
+	numberNodes = getNumberNodes(llrb_tree.root)
 
-percentage_red = numberRedNodes/numberNodes
-print(percentage_red)
+	numberRedNodes2 = getNumberRedNodes(llrb_tree.root)
+	numberNodes2 = getNumberNodes(llrb_tree.root)
+
+	numberRedNodes3 = getNumberRedNodes(llrb_tree.root)
+	numberNodes3 = getNumberNodes(llrb_tree.root)
+
+	percentage_red  = numberRedNodes/10000
+	percentage_red2 = numberRedNodes/100000
+	percentage_red3 = numberRedNodes/1000000
+
+	final1.append(percentage_red)
+	final2.append(percentage_red2)
+	final3.append(percentage_red3)
+
+
+print(np.mean(final1))
+print(np.mean(final2))
+print(np.mean(final3))
 
 
 
