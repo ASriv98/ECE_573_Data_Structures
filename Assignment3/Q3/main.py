@@ -116,10 +116,6 @@ for i in range(0,1):
 		randomNumber = random.randint(0,10000)
 		llrb_tree.insert(randomNumber)
 
-	print(llrb_tree.root)
-	print(llrb_tree.root.key)
-
-
 	for i in range(0,100000):
 		randomNumber = random.randint(0,100000)
 		llrb_tree.insert(randomNumber)
