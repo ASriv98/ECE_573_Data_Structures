@@ -13,11 +13,7 @@ from leftrb.llrb import LeftRB, is_red, is_black
 
 from leftrb.bst import BinarySearchTree
 import leftrb.llrb
-trials = 4
-
-
-
-
+trials = 1000
 
 def path_calculation(root, curr_depth=0):
 	
@@ -128,4 +124,5 @@ def llrb_test():
 		print(length,',', temp_avg, ',',std_dev)
 		#print("sorted", length, np.mean(sorted_values))
 
-llrb_test()
+#llrb_test()
+#bst_test()
